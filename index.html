@@ -130,18 +130,25 @@
 
   <!-- TUDUM SOUND EFFECT -->
   <audio id="tudum" src="netflix_tudum.mp3" preload="auto"></audio>
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const audio = document.getElementById("tudum");
-      setTimeout(() => {
-        audio.play().catch(err => console.log("Autoplay blocked:", err));
-      }, 500);
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("tudum");
 
-      // reveal section after splash
-      setTimeout(() => {
-        document.querySelector(".section-selector").classList.remove("hidden");
-      }, 3000);
-    });
-  </script>
+    const playSound = () => {
+      audio.play().catch(err => {
+        console.log("Autoplay blocked:", err);
+      });
+      window.removeEventListener("click", playSound); // Play only once
+    };
+
+    window.addEventListener("click", playSound); // Triggers audio on first click
+
+    // Splash transition after 3s
+    setTimeout(() => {
+      document.querySelector(".splash-screen").style.display = "none";
+      document.querySelector(".section-selector").classList.remove("hidden");
+    }, 3000);
+  });
+</script>
 </body>
 </html>
