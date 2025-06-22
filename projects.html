@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Timeline</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+    h1 {
+      text-align: center;
+      color: #e50914;
+      margin-bottom: 3rem;
+      font-size: 3rem;
+      letter-spacing: 0.2rem;
+      animation: breakLetters 2s ease-in-out;
+    }
+    @keyframes breakLetters {
+      0% { letter-spacing: 2rem; opacity: 0; }
+      100% { letter-spacing: 0.2rem; opacity: 1; }
+    }
+    .timeline {
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, #e50914, #64ffda);
+      animation: grow 2s ease forwards;
+    }
+    @keyframes grow {
+      from { height: 0; }
+      to { height: 100%; }
+    }
+    .entry {
+      margin-bottom: 4rem;
+      background-color: #1a1a1a;
+      padding: 1.5rem 1.5rem 1.5rem 3rem;
+      border-radius: 10px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .entry::before {
+      content: attr(data-date);
+      position: absolute;
+      left: -130px;
+      top: 1rem;
+      color: #ccc;
+      background-color: #222;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+    .entry.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .entry h2 {
+      color: #64ffda;
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+    }
+    .entry p {
+      margin: 0.3rem 0;
+      line-height: 1.5;
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .tech-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: #222;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+    .tech-item img {
+      width: 24px;
+      height: 24px;
+    }
+    .tech-item span {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Project Showcase</h1>
+  <div class="timeline">
+    <div class="entry" data-date="Jan 2025 - Sep 2025">
+      <h2>Leveraging LLMs in Law Firms</h2>
+      <p>Developed and evaluated a prompt-engineered LLM pipeline capable of interrogating, summarizing, and deriving actionable insights from legal documents.</p>
+      <p>Focus was placed on prompt engineering techniques like ReAct, Tree-of-Thought, and Few-shot learning, benchmarked with GPT-4o, Claude-3, and Lawyer-LLaMA models.</p>
+      <p>Evaluated using BLEU, ROUGE, and accuracy metrics for quality and interpretability.</p>
+      <p>This project demonstrates the application of state-of-the-art NLP techniques in legal technology, aiming to enhance efficiency and understanding in legal casework and document processing.</p>
+      <div class="tech-stack">
+        <div class="tech-item"><img src="python-logo.png" alt="Python"><span>Python(OpenAI,Bleu,transformers,Anthropic,huggingfacehub)</span></div>
+      </div>
+    </div>
+
+    <div class="entry" data-date="Jul 2019 – Sep 2019">
+      <h2>Fruit Recognition System</h2>
+      <p>Built a CNN-based system to detect rotten vs fresh fruits and vegetables using color and texture features.</p>
+      <p>The model helps automate spoilage detection in retail grocery settings.</p>
+      <p>By integrating computer vision into food quality assurance, this project aimed to reduce human error and speed up shelf inspection in supermarkets.</p>
+      <div class="tech-stack">
+        <div class="tech-item"><img src="python-logo.png" alt="Python"><span>Python (Keras, TensorFlow, Matplotlib)</span></div>
+      </div>
+    </div>
+
+    <div class="entry" data-date="Jan 2020 – Jun 2020">
+      <h2>Face Mask Detection with IoT</h2>
+      <p>Implemented during COVID-19 to detect mask usage using a binary face classifier from camera feeds.</p>
+      <p>Deployed with ThingSpeak to send warnings for unmasked individuals in real-time.</p>
+      <p>This solution provided a scalable, contactless method of monitoring health compliance in public spaces and educational institutions.</p>
+      <div class="tech-stack">
+        <div class="tech-item"><img src="python-logo.png" alt="Python"><span>Python (Keras, TensorFlow, ThingSpeak)</span></div>
+      </div>
+    </div>
+
+    <div class="entry" data-date="Jul 2020 – Sep 2020">
+      <h2>Autonomous Traffic Light System</h2>
+      <p>Designed a microcontroller-based system that prioritizes traffic lights based on lane-wise density and emergency vehicles.</p>
+      <p>Reduced congestion and improved emergency vehicle handling using real-time logic from 8085 Assembly programming.</p>
+      <p>This embedded system project showed how digital logic can be applied to smart city applications with a focus on public safety and efficiency.</p>
+      <div class="tech-stack">
+        <div class="tech-item"><img src="assembly-logo.png" alt="ASM"><span>Assembly (8085)</span></div>
+      </div>
+    </div>
+
+    <div class="entry" data-date="Jan 2021 – Jun 2021">
+      <h2>Obstacle Detection Robot with SLAM</h2>
+      <p>Built an autonomous robot that maps unknown terrains using SLAM (Simultaneous Localization and Mapping).</p>
+      <p>Enabled navigation and environmental awareness using GMapping in ROS for geological exploration.</p>
+      <p>The robot demonstrated real-time perception and localization, making it suitable for environmental mapping and field research in uncharted areas.</p>
+      <div class="tech-stack">
+        <div class="tech-item"><img src="ros-logo.png" alt="ROS"><span>ROS</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.entry').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

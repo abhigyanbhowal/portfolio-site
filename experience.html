@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience Timeline</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #e50914;
+      margin-bottom: 3rem;
+    }
+    .timeline {
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, #e50914, #64ffda);
+      animation: grow 2s ease forwards;
+    }
+    @keyframes grow {
+      from { height: 0; }
+      to { height: 100%; }
+    }
+    .entry {
+      margin-bottom: 4rem;
+      background-color: #1a1a1a;
+      padding: 1.5rem 1.5rem 1.5rem 3rem;
+      border-radius: 10px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .entry::before {
+      content: attr(data-date);
+      position: absolute;
+      left: -130px;
+      top: 1rem;
+      color: #ccc;
+      background-color: #222;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+    .entry img.logo {
+      width: 60px;
+      height: auto;
+      margin: 0.5rem 0 1rem 0;
+      display: block;
+    }
+    .entry.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .entry h2 {
+      color: #64ffda;
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+    }
+    .entry h3 {
+      color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+    .entry p {
+      margin: 0.3rem 0;
+      line-height: 1.5;
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .tech-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: #222;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+    .tech-item img {
+      width: 24px;
+      height: 24px;
+    }
+    .tech-item span {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Professional Experience</h1>
+  <div class="timeline">
+    <div class="entry" data-date="Jun 2025 – Present">
+      <img src="yoti-logo.png" alt="Yoti Logo" class="logo">
+      <h2>Research And Development Intern</h2>
+      <h3>Yoti Ltd, London, United Kingdom</h3>
+      <p>• Testing of anti-spoofing models, focusing on trends in successful and failed attacks.</p>
+      <p>• Evaluating age-estimation models with attention to fairness and confounding variables.</p>
+      <p>• Active participation in R&D brainstorming and model troubleshooting sessions.</p>
+      <p>• Developed systems to ensure repeatability of experiments.</p>
+      <div class="tech-stack">
+        <div class="tech-item"><img src="python-logo.png" alt="Python"><span>Python</span></div>
+        <div class="tech-item"><img src="sql-logo.png" alt="SQL"><span>SQL</span></div>
+      </div>
+    </div>
+
+    <div class="entry" data-date="Nov 2024 – Present">
+      <img src="kcl-logo.png" alt="KCL Logo" class="logo">
+      <h2>Online Events Assistant (Student Ambassador)</h2>
+      <h3>King’s College London, London, United Kingdom</h3>
+      <p>• Supported online event delivery, managing content streaming and live Q&A sessions.</p>
+      <p>• Acted as a student panelist, sharing insights to aid prospective students' decisions.</p>
+    </div>
+
+    <div class="entry" data-date="Jan 2024 – Jul 2024">
+      <img src="tcs-logo.png" alt="TCS Logo" class="logo">
+      <h2>Digital | Big Data Developer</h2>
+      <h3>Tata Consultancy Services (TCS) – Standard Chartered Bank</h3>
+      <p>• Automated sensitive data masking with Python and streamlined table loading using Shell scripts.</p>
+      <p>• Boosted project revenue by 18% through efficient data privacy solutions.</p>
+      <div class="tech-stack">
+        <div class="tech-item"><img src="python-logo.png" alt="Python"><span>Python</span></div>
+        <div class="tech-item"><img src="spark-logo.png" alt="Spark"><span>Spark</span></div>
+        <div class="tech-item"><img src="hive-logo.png" alt="Hive"><span>Hive</span></div>
+        <div class="tech-item"><img src="sql-logo.png" alt="SQL"><span>SQL</span></div>
+        <div class="tech-item"><img src="shell-logo.png" alt="Shell Script"><span>Shell Script</span></div>
+      </div>
+    </div>
+
+    <div class="entry" data-date="Jul 2022 – Jan 2024">
+      <img src="tcs-logo.png" alt="TCS Logo" class="logo">
+      <h2>Digital | Big Data Test Developer</h2>
+      <h3>Tata Consultancy Services (TCS) – VISA</h3>
+      <p>• Migrated Hawkeye and Atscale applications to TRE, reducing risk and improving efficiency.</p>
+      <p>• Helped save ~$10M in credit risk and 9% in time/resources.</p>
+      <div class="tech-stack">
+        <div class="tech-item"><img src="hive-logo.png" alt="Hive"><span>Hive</span></div>
+        <div class="tech-item"><img src="sql-logo.png" alt="SQL"><span>SQL</span></div>
+        <div class="tech-item"><img src="scala-logo.png" alt="Scala"><span>Scala</span></div>
+        <div class="tech-item"><img src="spark-logo.png" alt="Spark"><span>Spark</span></div>
+      </div>
+    </div>
+
+    <div class="entry" data-date="Jan 2022 – Jun 2022">
+      <img src="abinbev-logo.png" alt="AB InBev Logo" class="logo">
+      <h2>Digital Solutions Centre of Automation Intern</h2>
+      <h3>AB Inbev, Bangalore, India</h3>
+      <p>• Migrated 5 automation apps to Blue Prism, saving ~$1,000 per app and increasing revenue.</p>
+      <p>• Delivered SAP and Excel automation saving $10,000 and 4 hours of operations time.</p>
+      <div class="tech-stack">
+        <div class="tech-item"><img src="blueprism-logo.png" alt="Blue Prism"><span>Blue Prism</span></div>
+        <div class="tech-item"><img src="automationanywhere-logo.png" alt="Automation Anywhere"><span>Automation Anywhere</span></div>
+        <div class="tech-item"><img src="sap-logo.png" alt="SAP"><span>SAP</span></div>
+        <div class="tech-item"><img src="excel-logo.png" alt="Excel Macros"><span>Excel Macros</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.entry').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

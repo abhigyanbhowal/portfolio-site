@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhigyan Bhowal | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    .splash-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: black;
+      animation: fadeOut 3s ease 2s forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .netflix-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      color: #e50914;
+      letter-spacing: 0.2em;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      transform: scaleY(1.2) perspective(300px) rotateX(5deg);
+      display: inline-block;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .section-selector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      animation: fadeIn 1s ease-in-out 3s forwards;
+      opacity: 0;
+    }
+
+    .intro-text {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      border: 2px solid #e50914;
+      border-radius: 10px;
+      width: 150px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: white;
+      background-color: #111;
+    }
+
+    .box img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+      background-color: #222;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body class="light-mode">
+  <div class="splash-screen">
+    <h1 class="netflix-logo">ABHIGYAN</h1>
+  </div>
+
+  <div class="section-selector hidden">
+    <h2 class="intro-text">Hi, my name is Abhigyan Bhowal</h2>
+    <div class="boxes">
+      <a href="profile.html" class="box profile">
+        <img src="profile-icon.png" alt="Profile Icon" />
+        Profile & Education
+      </a>
+      <a href="experience.html" class="box experience">
+        <img src="experience-icon.png" alt="Experience Icon" />
+        Experience
+      </a>
+      <a href="projects.html" class="box projects">
+        <img src="projects-icon.png" alt="Projects Icon" />
+        Projects
+      </a>
+      <a href="contact.html" class="box contact">
+        <img src="contact-icon.png" alt="Contact Icon" />
+        Contact
+      </a>
+    </div>
+  </div>
+
+  <!-- TUDUM SOUND EFFECT -->
+  <audio id="tudum" src="netflix_tudum.mp3" preload="auto"></audio>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const audio = document.getElementById("tudum");
+      setTimeout(() => {
+        audio.play().catch(err => console.log("Autoplay blocked:", err));
+      }, 500);
+
+      // reveal section after splash
+      setTimeout(() => {
+        document.querySelector(".section-selector").classList.remove("hidden");
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

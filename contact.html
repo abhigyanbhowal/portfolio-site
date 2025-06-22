@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0f0f0f, #1c1c1c);
+      color: #ffffff;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #e50914;
+      margin-bottom: 1rem;
+      animation: slideInTop 1s ease-in-out;
+    }
+
+    @keyframes slideInTop {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #ccc;
+    }
+
+    .contact-info, .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      animation: fadeIn 2s ease forwards;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    a {
+      color: #64ffda;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #e50914;
+      transform: scale(1.05);
+    }
+
+    .social-icons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.3) rotate(5deg);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at 20% 30%, rgba(229, 9, 20, 0.15) 0%, transparent 60%),
+                  radial-gradient(circle at 80% 60%, rgba(100, 255, 218, 0.15) 0%, transparent 60%);
+      animation: moveBackground 10s linear infinite;
+    }
+
+    @keyframes moveBackground {
+      0% { background-position: 20% 30%, 80% 60%; }
+      50% { background-position: 30% 40%, 70% 50%; }
+      100% { background-position: 20% 30%, 80% 60%; }
+    }
+
+    form input, form textarea, form button {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      background: #222;
+      color: #fff;
+    }
+
+    form button {
+      background: #e50914;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: #b00610;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #64ffda;
+      color: #111;
+      padding: 10px 15px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="animated-bg"></div>
+  <h1>Get in Touch</h1>
+  <p>I'd love to hear from you! Whether it's about a project, opportunity, or just to say hello.</p>
+  <div class="contact-info">
+    <a href="mailto:abhigyanbhowal177@gmail.com">abhigyanbhowal177@gmail.com</a>
+    <a href="https://www.linkedin.com/in/abhigyan-b-94a117b2/" target="_blank">LinkedIn Profile</a>
+    <a href="./resume.pdf" download>Download My Resume</a>
+  </div>
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/in/abhigyan-b-94a117b2/" target="_blank">
+      <img src="linkedin-icon.png" alt="LinkedIn">
+    </a>
+    <a href="mailto:abhigyanbhowal177@gmail.com">
+      <img src="email-icon.png" alt="Email">
+    </a>
+  </div>
+  <form class="contact-form" action="mailto:abhigyanbhowal177@gmail.com" method="POST" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <a class="back-to-top" href="#top">↑ Top</a>
+</body>
+</html>

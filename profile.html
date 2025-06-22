@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile & Education</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #fff;
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+      overflow-x: hidden;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #000;
+      text-align: center;
+    }
+    .hero img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 30px rgba(229, 9, 20, 0.5);
+      animation: zoomIn 2s ease-out forwards;
+    }
+    .hero h1 {
+      color: #e50914;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #ccc;
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+    .scroll-arrow {
+      position: absolute;
+      bottom: 20px;
+      font-size: 2rem;
+      color: #64ffda;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.7);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    .timeline {
+      max-width: 1000px;
+      margin: 4rem auto;
+      border-left: 4px solid #e50914;
+      padding-left: 2rem;
+      position: relative;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -4px;
+      height: 100%;
+      width: 4px;
+      background: linear-gradient(to bottom, #e50914, #64ffda);
+    }
+    .timeline-entry {
+      margin-bottom: 4rem;
+      padding: 1.5rem;
+      background-color: #1c1c1c;
+      border-radius: 10px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .timeline-entry.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .timeline-entry h3 {
+      color: #64ffda;
+      margin-bottom: 0.8rem;
+      font-size: 1.4rem;
+    }
+    .timeline-entry p {
+      margin: 0.4rem 0;
+      font-size: 1rem;
+    }
+    .timeline-entry img {
+      width: 70px;
+      height: auto;
+      position: absolute;
+      left: -90px;
+      top: 20px;
+      border-radius: 4px;
+    }
+    .hobbies {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+    }
+    .hobbies h2 {
+      color: #e50914;
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    .hobbies ul {
+      list-style-type: disc;
+      padding-left: 2rem;
+    }
+    .hobbies li {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <img src="profile-photo.jpeg" alt="Abhigyan">
+    <h1>Hi, I'm Abhigyan Bhowal</h1>
+    <p><strong>Proficient Big Data Developer</strong> with 2 years of experience designing, testing, and coding Hadoop-based solutions, skilled in Hive/SQL, Scala, Python, and Spark. Passionate about data analytics and solving big data problems to create long-term value.</p>
+    <div class="scroll-arrow">&#8595;</div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-entry">
+      <img src="kcl-logo.png" alt="King's College London Logo">
+      <h3>MSc Data Science (Sep 2024 — Sep 2025)</h3>
+      <p><strong>King’s College London, UK</strong></p>
+      <p>Modules: Pattern Recognition, Neural Networks, Big Data Technologies, Data Mining, Computer Vision</p>
+    </div>
+    <div class="timeline-entry">
+      <img src="vit-logo.png" alt="VIT Vellore Logo">
+      <h3>Bachelor of Technology, ECE (Jun 2018 — Jun 2022)</h3>
+      <p><strong>VIT, Vellore, India</strong></p>
+      <p>Modules: OOP, Machine Learning, Web Mining, DSP</p>
+      <p>CGPA: 8.88/10</p>
+    </div>
+    <div class="timeline-entry">
+      <img src="dps-logo.png" alt="DPS Logo">
+      <h3>Class 12 (2017 — 2018)</h3>
+      <p><strong>DPS Ruby Park, Kolkata</strong></p>
+      <p>Marks: Physics – 95, Chemistry – 95, Math – 93, CS – 90, English – 86</p>
+      <p>Overall: 92%</p>
+    </div>
+    <div class="timeline-entry">
+      <img src="dps-logo.png" alt="DPS Logo">
+      <h3>Class 10</h3>
+      <p><strong>DPS Ruby Park, Kolkata</strong></p>
+      <p>Grades: Science – 10, Math – 10, Social – 10, English – 9, Hindi – 10</p>
+      <p>CGPA: 9.8</p>
+    </div>
+  </div>
+
+  <div class="hobbies">
+  <h2>Hobbies</h2>
+  <ul style="list-style: none; padding: 0;">
+    <li style="display: flex; align-items: center; margin-bottom: 2rem;">
+      <img src="gym.jpg" alt="Gym" style="width: 100px; height: auto; margin-right: 1rem; border-radius: 8px;">
+      <span><strong>Gym</strong> – Gym helps in bringing discipline into my world and makes me more productive each day.</span>
+    </li>
+    <li style="display: flex; align-items: center; margin-bottom: 2rem;">
+      <img src="music.jpg" alt="Music" style="width: 100px; height: auto; margin-right: 1rem; border-radius: 8px;">
+      <span><strong>Music (Guitar & Vocals)</strong> – Music brings a calm to my world and helps me express emotions beyond words.</span>
+    </li>
+    <li style="display: flex; align-items: center; margin-bottom: 2rem;">
+      <img src="gaming.jpg" alt="Gaming" style="width: 100px; height: auto; margin-right: 1rem; border-radius: 8px;">
+      <span><strong>Gaming</strong> – Gaming with friends is my way to relax, compete, and build bonds through shared adventures.</span>
+    </li>
+  </ul>
+</div>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.timeline-entry').forEach(entry => {
+      observer.observe(entry);
+    });
+  </script>
+</body>
+</html>
