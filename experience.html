@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Experience Timeline</title>
   <style>
     body {
@@ -47,26 +47,28 @@
       transform: translateY(30px);
       transition: all 0.8s ease;
     }
-    .entry::before {
-      content: attr(data-date);
-      position: absolute;
-      left: -130px;
-      top: 1rem;
+    .entry.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .entry-date {
       color: #ccc;
       background-color: #222;
       padding: 0.3rem 0.6rem;
       border-radius: 5px;
       font-size: 0.9rem;
+      position: absolute;
+      left: -130px;
+      top: 1rem;
+      white-space: pre-line;
+      text-align: center;
+      line-height: 1.3;
     }
     .entry img.logo {
       width: 60px;
       height: auto;
       margin: 0.5rem 0 1rem 0;
       display: block;
-    }
-    .entry.visible {
-      opacity: 1;
-      transform: translateY(0);
     }
     .entry h2 {
       color: #64ffda;
@@ -105,12 +107,24 @@
       font-size: 0.9rem;
       color: #ccc;
     }
+
+    @media (max-width: 600px) {
+      .entry-date {
+        left: -100px;
+        font-size: 0.8rem;
+      }
+      .entry {
+        padding-left: 2.5rem;
+      }
+    }
   </style>
 </head>
 <body>
   <h1>Professional Experience</h1>
   <div class="timeline">
-    <div class="entry" data-date="Jun 2025\A-\APresent">
+
+    <div class="entry">
+      <div class="entry-date">Jun 2025<br>-<br>Present</div>
       <img src="yoti-logo.png" alt="Yoti Logo" class="logo">
       <h2>Research And Development Intern</h2>
       <h3>Yoti Ltd, London, United Kingdom</h3>
@@ -124,7 +138,8 @@
       </div>
     </div>
 
-    <div class="entry" data-date="Nov 2024\A-\APresent">
+    <div class="entry">
+      <div class="entry-date">Nov 2024<br>-<br>Present</div>
       <img src="kcl-logo.png" alt="KCL Logo" class="logo">
       <h2>Online Events Assistant (Student Ambassador)</h2>
       <h3>King’s College London, London, United Kingdom</h3>
@@ -132,7 +147,8 @@
       <p>• Acted as a student panelist, sharing insights to aid prospective students' decisions.</p>
     </div>
 
-    <div class="entry" data-date="Jan 2024\A-\AJul 2024">
+    <div class="entry">
+      <div class="entry-date">Jan 2024<br>-<br>Jul 2024</div>
       <img src="tcs-logo.png" alt="TCS Logo" class="logo">
       <h2>Digital | Big Data Developer</h2>
       <h3>Tata Consultancy Services (TCS) – Standard Chartered Bank</h3>
@@ -147,7 +163,8 @@
       </div>
     </div>
 
-    <div class="entry" data-date="Jul 2022\A-\AJan 2024">
+    <div class="entry">
+      <div class="entry-date">Jul 2022<br>-<br>Jan 2024</div>
       <img src="tcs-logo.png" alt="TCS Logo" class="logo">
       <h2>Digital | Big Data Test Developer</h2>
       <h3>Tata Consultancy Services (TCS) – VISA</h3>
@@ -161,7 +178,8 @@
       </div>
     </div>
 
-    <div class="entry" data-date="Jan 2022\A-\AJun 2022">
+    <div class="entry">
+      <div class="entry-date">Jan 2022<br>-<br>Jun 2022</div>
       <img src="abinbev-logo.png" alt="AB InBev Logo" class="logo">
       <h2>Digital Solutions Centre of Automation Intern</h2>
       <h3>AB Inbev, Bangalore, India</h3>
@@ -174,6 +192,7 @@
         <div class="tech-item"><img src="excel-logo.png" alt="Excel Macros"><span>Excel Macros</span></div>
       </div>
     </div>
+
   </div>
 
   <script>
