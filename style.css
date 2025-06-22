@@ -28,6 +28,9 @@ body {
   animation: zoomFade 2s ease-in-out;
   max-width: 90%;
   word-wrap: break-word;
+  white-space: nowrap; /* Prevent line break */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @keyframes zoomFade {
@@ -118,9 +121,11 @@ body {
   position: relative;
   box-sizing: border-box;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 100vw; /* Ensure it doesn’t overflow */
+  overflow: hidden;
 }
 
-/* Vertical timeline line */
 .timeline-entry::before {
   content: '';
   position: absolute;
@@ -149,13 +154,11 @@ body {
   min-width: 200px;
 }
 
-/* Ensure content never goes outside viewport */
 * {
   box-sizing: border-box;
   word-break: break-word;
 }
 
-/* Responsive mobile layout */
 @media (max-width: 600px) {
   .boxes {
     flex-direction: column;
@@ -181,6 +184,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding-left: 1rem;
+    width: 100%;
   }
 
   .timeline-entry::before {
@@ -198,7 +202,6 @@ body {
   }
 }
 
-/* Images */
 img {
   max-width: 100%;
   height: auto;
