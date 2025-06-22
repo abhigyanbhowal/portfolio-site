@@ -20,16 +20,14 @@ body {
 }
 
 .netflix-logo {
-  font-size: 10vw;
+  font-size: 10vw; /* Responsive scaling */
   color: #e50914;
   letter-spacing: 2px;
   font-weight: bold;
   text-transform: uppercase;
   animation: zoomFade 2s ease-in-out;
-  max-width: 100%;
-  white-space: nowrap;
-  text-align: center;
-  overflow-wrap: break-word;
+  max-width: 90%;
+  word-wrap: break-word;
 }
 
 @keyframes zoomFade {
@@ -109,15 +107,29 @@ body {
   transform: translateY(-5px);
 }
 
-/* Timeline section */
+/* Timeline Entries */
 .timeline-entry {
   display: flex;
   align-items: center;
   margin: 1.5rem 0;
-  padding: 1rem;
+  padding: 1rem 1.5rem 1rem 1rem;
   background-color: #111;
   border-radius: 8px;
   flex-wrap: wrap;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Timeline vertical red line */
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #e50914;
+  border-radius: 2px;
 }
 
 .logo-container {
@@ -130,10 +142,14 @@ body {
   width: 100%;
   height: auto;
   border-radius: 4px;
-  display: block;
 }
 
-/* Mobile responsiveness */
+.timeline-content {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Responsive adjustments for mobile */
 @media (max-width: 600px) {
   .boxes {
     flex-direction: column;
@@ -153,23 +169,22 @@ body {
 
   .netflix-logo {
     font-size: 12vw;
-    white-space: normal;
   }
 
   .timeline-entry {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-left: 0.5rem;
+  }
+
+  .timeline-entry::before {
+    left: 0.25rem;
   }
 
   .logo-container {
-    width: 80px;
     margin: 0 0 1rem 0;
-  }
-
-  .timeline-logo {
-    width: 100%;
-    height: auto;
+    width: 80px;
   }
 
   .timeline-content {
@@ -177,7 +192,7 @@ body {
   }
 }
 
-/* Default image behavior */
+/* Responsive image */
 img {
   max-width: 100%;
   height: auto;
