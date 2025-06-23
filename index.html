@@ -129,27 +129,24 @@
   </div>
 
   <!-- TUDUM SOUND EFFECT -->
-  <audio id="tudum" src="netflix_tudum.mp3" preload="auto"></audio>
-
+ <audio id="tudum" src="tudum.mp3"></audio>
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('tudum');
+  window.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("tudum");
+    const playPromise = audio.play();
 
-    // Play on first click anywhere on the page
-    const playOnce = () => {
-      audio.play().catch(err => {
-        console.log("Autoplay blocked:", err);
-      });
-      window.removeEventListener('click', playOnce);
-    };
-
-    window.addEventListener('click', playOnce);
-
-    // Splash screen hide and section show after delay
-    setTimeout(() => {
-      document.querySelector('.splash-screen').style.display = 'none';
-      document.querySelector('.section-selector').classList.add('visible');
-    }, 3000);
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          // Sound autoplayed successfully
+        })
+        .catch(() => {
+          // Autoplay failed, fallback
+          document.body.addEventListener('click', () => {
+            audio.play();
+          }, { once: true });
+        });
+    }
   });
 </script>
 </body>
