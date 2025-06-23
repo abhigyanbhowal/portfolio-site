@@ -140,7 +140,80 @@ body {
   line-height: 1.3;
 }
 
-/* Mobile-specific fixes */
+.logo-container {
+  flex-shrink: 0;
+  width: 60px;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-logo {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.timeline-content {
+  flex: 1;
+  min-width: 200px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  padding-right: 1rem;
+}
+
+/* Skills section */
+.skills-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.skills-bar {
+  margin: 1rem auto;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.skills-bar span {
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  background: #64ffda;
+  text-align: right;
+  padding-right: 10px;
+  color: #000;
+  font-weight: bold;
+}
+
+.skills-label {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Scroll-triggered animations */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: none;
+}
+
+* {
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
 @media (max-width: 600px) {
   .boxes {
     flex-direction: column;
@@ -177,14 +250,6 @@ body {
     height: 100%;
   }
 
-  .entry-date {
-    position: relative;
-    left: 0;
-    top: 0;
-    margin-bottom: 0.5rem;
-    display: inline-block;
-  }
-
   .logo-container {
     width: 80px;
     margin: 0 0 1rem 0;
@@ -195,35 +260,6 @@ body {
     text-align: left;
     padding-right: 0;
   }
-}
-
-/* Logo and text containers */
-.logo-container {
-  flex-shrink: 0;
-  width: 60px;
-  margin-right: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.timeline-logo {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.timeline-content {
-  flex: 1;
-  min-width: 200px;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  padding-right: 1rem;
-}
-
-* {
-  box-sizing: border-box;
-  word-break: break-word;
 }
 
 img {
