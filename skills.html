@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Abhigyan Bhowal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .skills-section {
+      padding: 2rem;
+      text-align: center;
+      color: white;
+    }
+    .skills-section h1 {
+      color: #e50914;
+      margin-bottom: 2rem;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #222;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+    }
+    .skill-item img {
+      width: 30px;
+      height: 30px;
+    }
+    .skill-item span {
+      font-size: 1rem;
+    }
+    .chart-container {
+      max-width: 600px;
+      margin: auto;
+    }
+    .navbar {
+      width: 100%;
+      background-color: #141414;
+      padding: 1rem;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+  <section class="skills-section" data-aos="fade-up">
+    <h1>Skills & Proficiency</h1>
+    <div class="skills-list">
+      <div class="skill-item"><img src="python-logo.png" alt="Python"><span>Python</span></div>
+      <div class="skill-item"><img src="sql-logo.png" alt="SQL"><span>SQL</span></div>
+      <div class="skill-item"><img src="spark-logo.png" alt="Spark"><span>Spark</span></div>
+      <div class="skill-item"><img src="hive-logo.png" alt="Hive"><span>Hive</span></div>
+      <div class="skill-item"><img src="shell-logo.png" alt="Shell Script"><span>Shell Script</span></div>
+      <div class="skill-item"><img src="tensorflow-logo.png" alt="TensorFlow"><span>TensorFlow</span></div>
+    </div>
+
+    <div class="chart-container" data-aos="fade-up">
+      <canvas id="skillsRadarChart"></canvas>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const ctx = document.getElementById('skillsRadarChart').getContext('2d');
+    const radarChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['Python', 'SQL', 'Spark', 'Hive', 'Shell Script', 'TensorFlow'],
+        datasets: [{
+          label: 'Proficiency (out of 10)',
+          data: [9, 8, 7, 7, 6, 7],
+          backgroundColor: 'rgba(229, 9, 20, 0.2)',
+          borderColor: '#e50914',
+          pointBackgroundColor: '#e50914',
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          r: {
+            angleLines: { display: true },
+            suggestedMin: 0,
+            suggestedMax: 10,
+            pointLabels: {
+              color: '#fff'
+            },
+            ticks: {
+              color: '#ccc',
+              backdropColor: 'transparent'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: '#fff'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
