@@ -77,6 +77,8 @@
         opacity: 1;
       }
     }
+
+    /* Education Timeline */
     .timeline {
       max-width: 1000px;
       margin: 4rem auto;
@@ -124,6 +126,43 @@
       top: 20px;
       border-radius: 4px;
     }
+
+    /* Decoded with Abhi Box */
+    .decoded-box {
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      padding: 2rem;
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .decoded-box.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .decoded-box-logo {
+      width: 70px;
+      height: auto;
+      position: absolute;
+      left: -90px;
+      top: 20px;
+      border-radius: 6px;
+    }
+    .decoded-box h3 {
+      color: #e50914;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    .decoded-box p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    /* Hobbies */
     .hobbies {
       max-width: 800px;
       margin: 4rem auto;
@@ -149,61 +188,83 @@
   </style>
 </head>
 <body>
+  <!-- HERO SECTION -->
   <div class="hero">
     <img src="profile-photo.jpeg" alt="Abhigyan">
     <h1>Hi, I'm Abhigyan Bhowal</h1>
-    <p><strong>Proficient Big Data Developer</strong> with 2 years of experience designing, testing, and coding Hadoop-based solutions, skilled in Hive/SQL, Scala, Python, and Spark. Passionate about data analytics and solving big data problems to create long-term value.</p>
+    <p>
+      <strong>Proficient Big Data Developer</strong> with 2 years of experience designing, testing, 
+      and coding Hadoop-based solutions, skilled in Hive/SQL, Scala, Python, and Spark. Passionate 
+      about data analytics and solving big data problems to create long-term value.
+    </p>
     <div class="scroll-arrow">&#8595;</div>
   </div>
 
-
+  <!-- EDUCATION TIMELINE -->
   <div class="timeline">
     <div class="timeline-entry">
       <img src="kcl-logo.png" alt="King's College London Logo">
       <h3>MSc Data Science (Sep 2024 — Sep 2025)</h3>
       <p><strong>King’s College London, UK</strong></p>
       <p>Modules: Pattern Recognition, Neural Networks, Big Data Technologies, Data Mining, Computer Vision</p>
+      <p>Passed with <strong>Distinction</strong></p>
     </div>
     <div class="timeline-entry">
       <img src="vit-logo.png" alt="VIT Vellore Logo">
       <h3>Bachelor of Technology, ECE (Jun 2018 — Jun 2022)</h3>
       <p><strong>VIT, Vellore, India</strong></p>
       <p>Modules: OOP, Machine Learning, Web Mining, DSP</p>
-      <p>CGPA: 8.88/10</p>
+      <p>CGPA: <strong>8.88/10</strong></p>
     </div>
     <div class="timeline-entry">
       <img src="dps-logo.png" alt="DPS Logo">
       <h3>Class 12 (2017 — 2018)</h3>
       <p><strong>DPS Ruby Park, Kolkata</strong></p>
       <p>Marks: Physics – 95, Chemistry – 95, Math – 93, CS – 90, English – 86</p>
-      <p>Overall: 92%</p>
+      <p>Overall: <strong>92%</strong></p>
     </div>
     <div class="timeline-entry">
       <img src="dps-logo.png" alt="DPS Logo">
       <h3>Class 10</h3>
       <p><strong>DPS Ruby Park, Kolkata</strong></p>
       <p>Grades: Science – 10, Math – 10, Social – 10, English – 9, Hindi – 10</p>
-      <p>CGPA: 9.8</p>
+      <p>CGPA: <strong>9.8</strong></p>
     </div>
   </div>
 
+  <!-- DECODED WITH ABHI SECTION -->
+  <div class="decoded-box">
+    <img src="decoded-logo.png" alt="Decoded with Abhi Logo" class="decoded-box-logo">
+    <h3>Decoded with Abhi</h3>
+    <p>
+      <strong>Decoded with Abhi</strong> is my personal career-development platform where I help 
+      international students and tech professionals with job applications, résumé and cover letter 
+      building, LinkedIn branding, interview preparation, and personalised career guidance.
+    </p>
+    <p style="margin-top: 1rem; font-size: 1.05rem;">
+      🌐 <a href="https://decodedwithabhi.netlify.app" target="_blank" 
+      style="color: #64ffda; text-decoration: none;">https://decodedwithabhi.netlify.app</a>
+    </p>
+  </div>
+
+  <!-- HOBBIES SECTION -->
   <div class="hobbies">
-  <h2>Hobbies</h2>
-  <ul style="list-style: none; padding: 0;">
-    <li style="display: flex; align-items: center; margin-bottom: 2rem;">
-      <img src="gym.jpg" alt="Gym" style="width: 100px; height: auto; margin-right: 1rem; border-radius: 8px;">
-      <span><strong>Gym</strong> – Gym helps in bringing discipline into my world and makes me more productive each day.</span>
-    </li>
-    <li style="display: flex; align-items: center; margin-bottom: 2rem;">
-      <img src="music.jpg" alt="Music" style="width: 100px; height: auto; margin-right: 1rem; border-radius: 8px;">
-      <span><strong>Music (Guitar & Vocals)</strong> – Music brings a calm to my world and helps me express emotions beyond words.</span>
-    </li>
-    <li style="display: flex; align-items: center; margin-bottom: 2rem;">
-      <img src="gaming.jpg" alt="Gaming" style="width: 100px; height: auto; margin-right: 1rem; border-radius: 8px;">
-      <span><strong>Gaming</strong> – Gaming with friends is my way to relax, compete, and build bonds through shared adventures.</span>
-    </li>
-  </ul>
-</div>
+    <h2>Hobbies</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li style="display: flex; align-items: center; margin-bottom: 2rem;">
+        <img src="gym.jpg" alt="Gym" style="width: 100px; height: auto; margin-right: 1rem; border-radius: 8px;">
+        <span><strong>Gym</strong> – Gym helps in bringing discipline into my world and makes me more productive each day.</span>
+      </li>
+      <li style="display: flex; align-items: center; margin-bottom: 2rem;">
+        <img src="music.jpg" alt="Music" style="width: 100px; height: auto; margin-right: 1rem; border-radius: 8px;">
+        <span><strong>Music (Guitar & Vocals)</strong> – Music brings a calm to my world and helps me express emotions beyond words.</span>
+      </li>
+      <li style="display: flex; align-items: center; margin-bottom: 2rem;">
+        <img src="gaming.jpg" alt="Gaming" style="width: 100px; height: auto; margin-right: 1rem; border-radius: 8px;">
+        <span><strong>Gaming</strong> – Gaming with friends is my way to relax, compete, and build bonds through shared adventures.</span>
+      </li>
+    </ul>
+  </div>
 
   <script>
     const observer = new IntersectionObserver(entries => {
@@ -214,7 +275,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.timeline-entry').forEach(entry => {
+    document.querySelectorAll('.timeline-entry, .decoded-box').forEach(entry => {
       observer.observe(entry);
     });
   </script>
